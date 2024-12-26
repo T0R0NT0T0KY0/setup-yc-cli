@@ -1,13 +1,17 @@
 # Setup the latest version of Yandex Cloud CLI
 
+## Inputs
+
+* `SA_KEY` - Your service account private key (json form) [optional]
+
 ## Usage
 
 See [action.yml](action.yml)
 
 ```yaml
-- uses: T0R0NT0T0KY0/setup-yc-cli@v1
+- name: Install Yandex CLI and Login
+  uses: T0R0NT0T0KY0/setup-yc-cli@v1
   with:
-    # Your service account private key (json form) [optional]
     SA_KEY: ${{ secrets.YC_SA_KEY }}
 
 ```
