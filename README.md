@@ -12,4 +12,4 @@ See [action.yml](action.yml)
 
 ```
 
-***(eng)*** This will install the latest version of Yandex Cloud CLI. Then logging in if SA_KEY parameter is provided.
+This will install the latest version of Yandex Cloud CLI. Then logging in if SA_KEY parameter is provided.
