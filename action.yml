@@ -1,5 +1,5 @@
 name: 'setup-yc-cli'
-description: 'deploy'
+description: 'Setup Yandex Cloud CLI'
 author: 'T0R0NT0T0KY0'
 branding:
   icon: 'arrow-up-circle'
