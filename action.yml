@@ -12,30 +12,31 @@ runs:
     - name: Get latest yc version number
       shell: bash
       id: version
-      run:
-        echo "version=`curl -s --fail https://storage.yandexcloud.net/yandexcloud-yc/release/stable`" >> $GITHUB_OUTPUT
+      run: |
+        version=$(curl -s --fail https://storage.yandexcloud.net/yandexcloud-yc/release/stable)
+        echo "version=$version" >> $GITHUB_OUTPUT
 
     - name: Cache yc binary
       uses: actions/cache@v4
       id: cache-yc-cli
       with:
         path: /usr/local/bin/yc
-        key: yc-cli-${{ steps.version.outputs.value }}
+        key: yc-cli-${{ steps.version.outputs.version }}
 
     - name: Get yc binary if cache miss
       if: steps.cache-yc-cli.outputs.cache-hit != 'true'
       shell: bash
       run: |
-        echo Downloading yc cli version ${{ steps.version.outputs.version }}
+        echo "Downloading yc cli version ${{ steps.version.outputs.version }}"
         sudo curl --fail "https://storage.yandexcloud.net/yandexcloud-yc/release/${{ steps.version.outputs.version }}/linux/amd64/yc" -o /usr/local/bin/yc
 
     - name: Set permissions for yc cli binary
       shell: bash
-      run:
+      run: |
         sudo chmod a+rx /usr/local/bin/yc
 
     - name: Authorize service account
-      if: ${{ inputs.SA_KEY }}
+      if: ${{ inputs.SA_KEY != '' }}
       shell: bash
-      run:
+      run: |
         yc config set service-account-key <(echo '${{ inputs.SA_KEY }}')
