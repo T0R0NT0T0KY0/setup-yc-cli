@@ -1,5 +1,9 @@
 name: 'setup-yc-cli'
 description: 'deploy'
+author: 'T0R0NT0T0KY0'
+branding:
+  icon: 'arrow-up-circle'
+  color: 'purple'
 inputs:
   SA_KEY:
     description: 'Yandex cloud service account private key. No logging in if parameter is not provided.'
