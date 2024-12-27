@@ -2,7 +2,7 @@
 
 ## Переменные
 
-* `SA_KEY` - Your service account private key (json form) [optional]
+* `SA_KEY` - Закрытый ключ вашего сервисного аккаунта (форма JSON) [необязательно]
 
 ## Использование
 
