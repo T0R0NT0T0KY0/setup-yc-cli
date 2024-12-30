@@ -2,7 +2,8 @@
 
 ## Переменные
 
-* `SA_KEY` - Закрытый ключ вашего сервисного аккаунта (форма JSON) [необязательно]
+* `SA_KEY` - Закрытый ключ вашего сервисного аккаунта (формат JSON) [необязательно]
+* `FOLDER_ID` - [Идентификатор папки](https://yandex.cloud/en/docs/resource-manager/operations/folder/get-id?utm_referrer=https%3A%2F%2Fduckduckgo.com%2F) сервисного аккаунта (формат строка) [optional]
 
 ## Использование
 

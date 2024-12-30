@@ -2,11 +2,15 @@ name: 'setup-yc-cli'
 description: 'Setup Yandex Cloud CLI'
 author: 'T0R0NT0T0KY0'
 branding:
-  icon: 'arrow-up-circle'
+  icon: 'alert-triangle'
   color: 'purple'
 inputs:
   SA_KEY:
     description: 'Yandex cloud service account private key. No logging in if parameter is not provided.'
+    required: false
+    default: ''
+  FOLDER_ID:
+    description: 'Yandex cloud service account folder id.'
     required: false
     default: ''
 
@@ -44,3 +48,8 @@ runs:
       shell: bash
       run: |
         yc config set service-account-key <(echo '${{ inputs.SA_KEY }}')
+
+    - name: Set folder id
+      if: ${{ inputs.FOLDER_ID != '' }}
+      run: |
+        yc config set folder-id ${{ env.FOLDER_ID }}
