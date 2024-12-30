@@ -51,5 +51,6 @@ runs:
 
     - name: Set folder id
       if: ${{ inputs.FOLDER_ID != '' }}
+      shell: bash
       run: |
         yc config set folder-id ${{ env.FOLDER_ID }}
