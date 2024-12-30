@@ -14,7 +14,7 @@ See [action.yml](action.yml)
   uses: T0R0NT0T0KY0/setup-yc-cli@v1
   with:
     SA_KEY: ${{ secrets.YC_SA_KEY }}
-
+    FOLDER_ID: ${{ secrets.YC_FOLDER_ID }}
 ```
 
 This will install the latest version of Yandex Cloud CLI. Then logging in if SA_KEY parameter is provided.

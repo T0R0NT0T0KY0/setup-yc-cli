@@ -14,7 +14,7 @@
   uses: T0R0NT0T0KY0/setup-yc-cli@v1
   with:
     SA_KEY: ${{ secrets.YC_SA_KEY }}
-
+    FOLDER_ID: ${{ secrets.YC_FOLDER_ID }}
 ```
 
 Устанавливает последнюю версию Yandex Cloud CLI. Выполняет логин если указан SA_KEY.
