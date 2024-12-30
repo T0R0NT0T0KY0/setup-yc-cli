@@ -3,6 +3,7 @@
 ## Inputs
 
 * `SA_KEY` - Your service account private key (json form) [optional]
+* `FOLDER_ID` - Your service account [folder id](https://yandex.cloud/en/docs/resource-manager/operations/folder/get-id?utm_referrer=https%3A%2F%2Fduckduckgo.com%2F) (string form) [optional]
 
 ## Usage
 
