@@ -18,3 +18,14 @@ See [action.yml](action.yml)
 ```
 
 This will install the latest version of Yandex Cloud CLI. Then logging in if SA_KEY parameter is provided.
+
+## Update version
+
+For example, version `v1.0.0` is used.
+
+```shell
+git tag v1.0.0
+git push origin v1.0.0
+git tag -f v1 v1.0.0
+git push -f origin v1
+```
