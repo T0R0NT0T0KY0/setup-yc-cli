@@ -35,8 +35,12 @@ runs:
       if: steps.cache-yc-cli.outputs.cache-hit != 'true'
       shell: bash
       run: |
+        tmp="$(mktemp)"
+        
         echo "Downloading yc cli version ${{ steps.version.outputs.version }}"
-        sudo curl --fail "https://storage.yandexcloud.net/yandexcloud-yc/release/${{ steps.version.outputs.version }}/linux/amd64/yc" -o /usr/local/bin/yc
+        sudo curl --fail "https://storage.yandexcloud.net/yandexcloud-yc/release/${{ steps.version.outputs.version }}/linux/amd64/yc" -o "$tmp"
+        sudo install -m 755 "$tmp" /usr/local/bin/yc
+        rm -f "$tmp"
 
     - name: Set permissions for yc cli binary
       shell: bash
